@@ -152,3 +152,10 @@ static
 artifacts
 *.pickle
 *.h5
+
+# Failed output files
+pipenv_install_fail.txt
+pipenv_support.txt
+
+# Ignore Pipfile.lock to avoid local difference
+Pipfile.lock
