@@ -149,9 +149,9 @@ static
 .git
 
 # Software output
-artifacts
-*.pickle
-*.h5
+# artifacts
+# *.pickle
+# *.h5
 
 # Failed output files
 pipenv_install_fail.txt
