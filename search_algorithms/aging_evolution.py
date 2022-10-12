@@ -53,16 +53,21 @@ class GPUTrainer:
         log.info(f"Training complete: val_error={val_error:.4f}, test_error={test_error:.4f}, "
                  f"resource_features={resource_features}.")
         
-        model_file = self.root_dir / f"{self.experiment_name}_agingevosearch_state_final.sav"
-        self.save_model(model, model_file.as_posix())
+        # model_file = "1010_agingevosearch_state_final.sav"
+        # self.save_model(model, model_file)
+
+        # import pdb
+        # pdb.set_trace()
+
+        model.save("test_model_mnist")
         
         return EvaluatedPoint(point=point,
                               val_error=val_error, test_error=test_error,
                               resource_features=resource_features)
 
-    def save_model(self, model, file):
-        with open(file, "wb") as f:
-            pickle.dump(model, f)
+    # def save_model(self, model, file):
+    #     with open(file, "wb") as f:
+    #         pickle.dump(model, f)
 
 class AgingEvoSearch:
     def __init__(self,
